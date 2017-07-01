@@ -1,0 +1,21 @@
+version: 0.1
+
+environment_variables:
+  plaintext:
+    SNS_TOPIC_ARN: arn:aws:sns:us-west-2:534598350097:pr-builder
+
+phases:
+  install:
+    commands:
+      - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Nothing to do in the build phase...
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - 'aws sns publish --topic-arn arn:aws:sns:us-west-2:534598350097:pr-builder --message "{\"buildId\": \"$CODEBUILD_BUILD_ID\"}"'
