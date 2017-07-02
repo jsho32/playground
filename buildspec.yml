@@ -18,4 +18,4 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - 'aws sns publish --topic-arn arn:aws:sns:us-west-2:534598350097:pr-builder --message "{\"buildId\": \"$CODEBUILD_BUILD_ID\", \"repo\":\"jsho32/playgorund\"}"'
+      - 'aws sns publish --topic-arn arn:aws:sns:us-west-2:534598350097:pr-builder --message "{\"buildId\": \"$CODEBUILD_BUILD_ID\", \"repo\":\"jsho32/playground\"}"'
